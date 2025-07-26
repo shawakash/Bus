@@ -1,0 +1,45 @@
+[common]
+backup_dir = "./backup"
+log_level = "info"
+log_dir = "./logs"
+retention_days = 7
+
+[[services]]
+type = "postgres"
+alias = "main-db"
+
+[services.schedule]
+interval_seconds = 3600
+timezone = "UTC"
+start_time = "02:00"
+
+[services.connection]
+service_type = "postgres"
+host = "localhost"
+port = 5432
+username = "akira"
+password = "${LOTTO_DB_PASSWORD}"
+database = "akira"
+
+[services.backup_options]
+format = "plain"
+schema_only = "false"
+data_only = "false"
+
+[[services]]
+type = "redis"
+alias = "redis-secure"
+
+[services.schedule]
+interval_seconds = 3600
+timezone = "UTC"
+start_time = "02:00"
+
+[services.connection]
+service_type = "redis"
+host = "localhost"
+port = 6379
+password = "${LOTTO_REDIS_PASSWORD}"
+
+[services.backup_options]
+method = "rdb"
