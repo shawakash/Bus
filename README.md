@@ -1,6 +1,6 @@
-## Bup: A Background Backup Scheduler
+## Bus: A Background Backup Scheduler
 
-Bup is a simple background backup scheduler designed for backing up services like postgres, redis.
+Bus is a simple background backup scheduler designed for backing up services like postgres, redis.
 
 It periodically backs up specified services and dumps the files into the designated folder with a retention period mentioned in configuration.
 
@@ -19,13 +19,13 @@ It periodically backs up specified services and dumps the files into the designa
 
 1. Clone and build the crate:
     ```bash
-    git clone https://github.com/shawakash/bup
-    cd bup
+    git clone https://github.com/shawakash/Bus.git
+    cd Bus
 
     cargo build --release
     ```
 
-2. Create a configuration file say `bup.toml` in the root directory with the following structure:
+2. Create a configuration file say `bus.toml` in the root directory with the following structure:
     ```toml
         [common]
         backup_dir = "./backup"
@@ -60,7 +60,7 @@ It periodically backs up specified services and dumps the files into the designa
 
 3. Run the application:
     ```bash
-    cargo run --release --prefix bup --config ./bup.toml
+    cargo run --release --prefix bus --config ./bus.toml
     ```
 
 
