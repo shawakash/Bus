@@ -23,8 +23,8 @@ database = "akira"
 
 [services.backup_options]
 format = "plain"
-schema_only = "false"
-data_only = "false"
+# schema_only = "false"
+# data_only = "false"
 
 [[services]]
 type = "redis"

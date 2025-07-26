@@ -60,7 +60,7 @@ It periodically backs up specified services and dumps the files into the designa
 
 3. Run the application:
     ```bash
-    cargo run --release --prefix bus --config ./bus.toml
+    cargo run --release -- --prefix bus --config ./bus.toml
     ```
 
 
