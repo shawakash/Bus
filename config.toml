@@ -17,9 +17,9 @@ start_time = "02:00"
 service_type = "postgres"
 host = "localhost"
 port = 5432
-username = "akira"
-password = "${LOTTO_DB_PASSWORD}"
-database = "akira"
+username = "db_username"
+password = "${DB_PASSWORD}"
+database = "database"
 
 [services.backup_options]
 format = "plain"
@@ -39,7 +39,7 @@ start_time = "02:00"
 service_type = "redis"
 host = "localhost"
 port = 6379
-password = "${LOTTO_REDIS_PASSWORD}"
+password = "${REDIS_PASSWORD}"
 
 [services.backup_options]
 method = "rdb"

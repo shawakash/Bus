@@ -46,9 +46,9 @@ It periodically backs up specified services and dumps the files into the designa
         service_type = "postgres"
         host = "localhost"
         port = 5432
-        username = "akira"
-        password = "${LOTTO_DB_PASSWORD}"
-        database = "akira"
+        username = "username"
+        password = "${DB_PASSWORD}"
+        database = "database"
 
         [services.backup_options]
         format = "plain"
@@ -78,7 +78,7 @@ Some examples of Service restoration:
 - For Postgres, you can use the `pg_restore` command to restore from the backup files.
 
 ```bash
-docker exec -i postgres psql -U akira -d akira < /path/to/backup/file.sql
+docker exec -i postgres psql -U username -d username < /path/to/backup/file.sql
 ```
 
 - For Redis, you can use the `redis-cli` command to restore from the backup files.
